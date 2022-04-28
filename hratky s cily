@@ -1,0 +1,138 @@
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void btnSuda_Click(object sender, EventArgs e)
+        {
+            int pocatek = Convert.ToInt32(nmrPocatek.Value);
+            int konec = (int) nmrKonec.Value;
+            txtVystup.Text = "";
+
+            for(int i = pocatek; i <= konec; i++) 
+            {
+                if (i % 2 == 0) txtVystup.Text += i + ",";
+            }
+        }
+
+        private void btnLichaC_Click(object sender, EventArgs e)
+        {
+            int pocatek = Convert.ToInt32(nmrPocatek.Value);
+            int konec = (int)nmrKonec.Value;
+            txtVystup.Text = "";
+
+            for (int i = pocatek; i <= konec; i++) 
+            {
+                if (i % 2 == 1) txtVystup.Text += i + ",";
+            }
+        }
+
+        private void btnDelitelna3_Click(object sender, EventArgs e)
+        {
+            int pocatek = Convert.ToInt32(nmrPocatek.Value);
+            int konec = (int)nmrKonec.Value;
+            txtVystup.Text = "";
+
+            for (int i = pocatek; i <= konec; i++) 
+            {
+                if (i % 3 == 0) txtVystup.Text += i + ",";
+            }
+        }
+
+        private void btnSudaKrom0_Click(object sender, EventArgs e)
+        {
+            int pocatek = Convert.ToInt32(nmrPocatek.Value);
+            int konec = (int)nmrKonec.Value;
+            txtVystup.Text = "";
+            
+            for (int i = pocatek; i <= konec; i++) 
+            {
+                if (i % 2 == 0 && i != 0) txtVystup.Text += i + ",";
+            }
+        }
+
+        private void btnDelitelna6ti_Click(object sender, EventArgs e)
+        {
+            int pocatek = Convert.ToInt32(nmrPocatek.Value);
+            int konec = (int)nmrKonec.Value;
+            txtVystup.Text = "";
+
+            for (int i = pocatek; i <= konec; i++) 
+            {
+                if (i % 6 == 0) txtVystup.Text += i + ",";
+            }
+        }
+
+        private void btnDelitena_6ti_ale_ne_3_Click(object sender, EventArgs e)
+        {
+            int pocatek = Convert.ToInt32(nmrPocatek.Value);
+            int konec = (int)nmrKonec.Value;
+            txtVystup.Text = "";
+
+            for (int i = pocatek; i <= konec; i++) 
+            {
+                if (i % 3 == 0 && i % 6 != 0) txtVystup.Text += i + ",";
+            }
+        }
+
+        private void btn_Cisla_del_5_ktera_nejsou_del_10_Click(object sender, EventArgs e)
+        {
+            int pocatek = Convert.ToInt32(nmrPocatek.Value);
+            int konec = (int)nmrKonec.Value;
+            txtVystup.Text = "";
+
+            for (int i = pocatek; i <= konec; i++)
+            {
+                if (i % 5 == 0 && !(i % 10 == 0)) txtVystup.Text += i + ",";
+            }
+        }
+
+        private void btn_C_ktera_nejsou_del_4_Click(object sender, EventArgs e)
+        {
+            int pocatek = Convert.ToInt32(nmrPocatek.Value);
+            int konec = (int)nmrKonec.Value;
+            txtVystup.Text = "";
+
+            for (int i = pocatek; i <= konec; i++)
+            {
+                if (i % 4 != 0) txtVystup.Text += i + ",";
+            }
+        }
+
+        private void btn_Del_3_a_zaroven_5_nebo_8_Click(object sender, EventArgs e)
+        {
+            int pocatek = Convert.ToInt32(nmrPocatek.Value);
+            int konec = (int)nmrKonec.Value;
+            txtVystup.Text = "";
+
+            for (int i = pocatek; i <= konec; i++)
+            {
+                if ((i % 3 == 0 && i % 5 == 0) || i % 8 == 0) txtVystup.Text += i + ",";
+            }
+        }
+
+        private void btnCiferny_soucet_Click(object sender, EventArgs e)
+        {
+            int pocatek = Convert.ToInt32(nmrPocatek.Value);
+            int konec = (int)nmrKonec.Value;
+            txtVystup.Text = "";
+
+            for (int i = pocatek; i <= konec; i++)
+            {
+                int c = i;
+                int soucet = 0;
+                while (c != 0) 
+                {
+                    soucet += c % 10;
+                    c = c / 10;
+                }
+                soucet = Math.Abs(soucet);
+                if (soucet == 8 ) txtVystup.Text += Convert.ToString(i)+ ", ";
+             
+            }
+        }
+    }
+}
